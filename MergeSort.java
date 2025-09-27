@@ -3,6 +3,7 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
+        // Fill the array with random values
         testSortingCorrectness();
 
         Random rand = new Random();
@@ -47,6 +48,7 @@ public class MergeSort {
     }
 
     private static void merge (int[] inputArray, int[] leftHalf, int[] rightHalf) {
+        // merging 
         int leftSize = leftHalf.length;
         int rightSize = rightHalf.length;
 
@@ -84,6 +86,7 @@ public class MergeSort {
         }
     }
     public static void testSortingCorrectness() {
+        // testing 
         int[] randomArray = generateRandomArray(10);
         System.out.println("Original array (random): " + Arrays.toString(randomArray));
 
