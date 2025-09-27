@@ -4,6 +4,7 @@ import java.util.Arrays;
 public class MergeSort {
     public static void main(String[] args) {
         testSortingCorrectness();
+        testEdgeCases();
 
         Random rand = new Random();
         int[] numbers = new int[10];
@@ -85,7 +86,7 @@ public class MergeSort {
     }
     public static void testSortingCorrectness() {
         int[] randomArray = generateRandomArray(10);
-        System.out.println("Original array (random): " + Arrays.toString(randomArray));
+        System.out.println(Arrays.toString(randomArray));
 
         int[] expected = Arrays.copyOf(randomArray, randomArray.length);
         Arrays.sort(expected);
@@ -95,6 +96,23 @@ public class MergeSort {
         assert Arrays.equals(randomArray, expected) : "Test failed: Arrays do not match!";
         System.out.println("Test passed: Correctly sorted random array.");
     }
+
+    public static void testEdgeCases() {
+        // Test 1: Empty array
+        int[] emptyArray = {};
+        int[] expectedEmpty = {};
+        MergeSort.mergeSort(emptyArray);
+        assert Arrays.equals(emptyArray, expectedEmpty) : "Test failed: Empty array should remain empty!";
+        System.out.println("Test passed: Empty array");
+
+        // Test 2: Single-element array
+        int[] singleElementArray = {42};
+        int[] expectedSingle = {42};
+        MergeSort.mergeSort(singleElementArray);
+        assert Arrays.equals(singleElementArray, expectedSingle) : "Test failed: Single-element array should remain unchanged!";
+        System.out.println("Test passed: Single-element array");
+    }
+
     public static int[] generateRandomArray(int size) {
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
