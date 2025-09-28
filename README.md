@@ -28,8 +28,6 @@ Recursively sort left and right subarrays.
 
 Tail recursion or smaller-first recursion can limit stack depth.
 
-# Time Complexity:
-
 # Case	Complexity
 Best Case	O(n log n)
 Average Case	O(n log n)
