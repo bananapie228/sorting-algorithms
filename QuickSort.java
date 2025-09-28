@@ -3,6 +3,7 @@ import java.util.Arrays;
 public class QuickSort {
     public static void main(String[] args) {
         int[] array = {5, 8, 3, 9, 10, 13};
+        testQuickSort();
 
         // Print original array
         System.out.println("Unsorted Array: " + Arrays.toString(array));
@@ -47,5 +48,28 @@ public class QuickSort {
         arr[high] = temp;
 
         return i + 1;
+    }
+    private static void testQuickSort() {
+        int[][] testArrays = {
+                {},                  // Empty array
+                {4},                // Single element
+                {3, 3, 5, 2, 5},     // Duplicates
+                {10, 9, 8},    // Reverse sorted
+                {1, 1, 1, 1},        // All identical
+
+        };
+
+        for (int i = 0; i < testArrays.length; i++) {
+            int[] arr = testArrays[i];     // Pick each test array
+            int[] copy = arr.clone();      // Make a copy to sort for comparison
+            Arrays.sort(copy);             // Built-in sort for expected result
+
+            quickSort(arr, 0, arr.length - 1);  // Sort with QuickSort
+
+            // Check if QuickSort sorted the array correctly
+            assert Arrays.equals(arr, copy) : "Test failed on array: " + Arrays.toString(copy);
+        }
+
+        System.out.println("QuickSort edge cases passed");
     }
 }
