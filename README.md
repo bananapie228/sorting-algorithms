@@ -8,7 +8,7 @@ This project implements **QuickSort**, a fast divide-and-conquer sorting algorit
 1. Clone the repository:
 
 bash
-git clone https://github.com/bananapie228/sorting-algorithms/tree/quick-sort.git
+git clone https://github.com/bananapie228/sorting-algorithms/tree/quick-sort
 Open the project in your IDE.
 
 Compile and run:
